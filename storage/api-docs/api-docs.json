@@ -1,0 +1,398 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Music Catalog API",
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/albums": {
+            "get": {
+                "summary": "Get all albums",
+                "operationId": "735609843dcfb89ee4e12e340eddca25",
+                "responses": {
+                    "200": {
+                        "description": "A list of albums"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new album",
+                "operationId": "2252aa8fd63b7d2fa1203c1735943d46",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Album"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Album created"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/albums/{id}": {
+            "get": {
+                "summary": "Get a specific album",
+                "operationId": "71e9c4179582355e89419e6f6994c418",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Album found"
+                    },
+                    "404": {
+                        "description": "Album not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an existing album",
+                "operationId": "1300ec85cc590b1ae1468c9bf8db122d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Album"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Album updated"
+                    },
+                    "404": {
+                        "description": "Album not found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an album",
+                "operationId": "cabfc7c152115607d310827d46a82d5a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Album deleted"
+                    },
+                    "404": {
+                        "description": "Album not found"
+                    }
+                }
+            }
+        },
+        "/api/artists": {
+            "get": {
+                "summary": "Get all artists",
+                "operationId": "2c8aed1387cca1c65d98da7ee11ac926",
+                "responses": {
+                    "200": {
+                        "description": "A list of artists"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new artist",
+                "operationId": "83d2888bdc6fac66b9a7cc81c4c950fb",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Artist"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Artist created"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/artists/{id}": {
+            "get": {
+                "summary": "Get a specific artist",
+                "operationId": "d0b68c06b8bc310fbe24c6d3ea80dac3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Artist found"
+                    },
+                    "404": {
+                        "description": "Artist not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an existing artist",
+                "operationId": "5a5632ea389f9a05336f8d035f5a44c0",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Artist"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Artist updated"
+                    },
+                    "404": {
+                        "description": "Artist not found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an artist",
+                "operationId": "4f6d8bd2c8b4b738af7589b72348ac20",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Artist deleted"
+                    },
+                    "404": {
+                        "description": "Artist not found"
+                    }
+                }
+            }
+        },
+        "/api/songs": {
+            "get": {
+                "summary": "Get all songs",
+                "operationId": "0388bb28c35eec49b8b492d169ce3575",
+                "responses": {
+                    "200": {
+                        "description": "A list of songs"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new song",
+                "operationId": "2f1970b82d91cc715578d972189f19cb",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Song"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Song created"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/songs/{id}": {
+            "get": {
+                "summary": "Get a specific song",
+                "operationId": "4325a96361d1d3820cc0580eaae9197c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Song found"
+                    },
+                    "404": {
+                        "description": "Song not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an existing song",
+                "operationId": "452de7f8f11a121cd11e9430565632c3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Song"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Song updated"
+                    },
+                    "404": {
+                        "description": "Song not found"
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete a song",
+                "operationId": "829c1a52ae5013ce3ff4b9829a31485f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Song deleted"
+                    },
+                    "404": {
+                        "description": "Song not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Album": {
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "example": "Album Title"
+                    },
+                    "release_year": {
+                        "type": "integer",
+                        "example": 2023
+                    },
+                    "artist_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            },
+            "Artist": {
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "example": "Artist Name"
+                    }
+                },
+                "type": "object"
+            },
+            "Song": {
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "example": "Song Title"
+                    },
+                    "track_number": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "album_id": {
+                        "type": "integer",
+                        "example": 1
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
